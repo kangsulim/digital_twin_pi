@@ -43,19 +43,29 @@ class Button:
     def checkPressed(self, currentState):
         return currentState == gpio.HIGH and self.prevState == gpio.LOW
 
-def open():
-    print("문을 연다")
-    
-def close():
-    print("문을 닫는다")
+leds = (Led(16, "RED"), Led(21, "YELLOW"))
 
-buttons = (Button(13, open), Button(19, close))
-    
+def ledRedFunction():
+    leds[0].blink(10, 0.5)
+
+greenLedState = False
+
+def ledGreenFunction():
+    global greenLedState
+    if greenLedState:
+        leds[1].ledOff()
+    else:
+        leds[1].ledOn()
+    greenLedState = not greenLedState
+
+buttons = (Button(13, ledRedFunction), Button(19, ledGreenFunction))
+
+
+
 try:
     while True:
         for button in buttons:
             button.waitPressed()
-        
 except KeyboardInterrupt:
     pass
 finally:

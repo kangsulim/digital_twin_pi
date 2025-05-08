@@ -61,8 +61,6 @@ def ledGreenFunction():
 
 buttons = (Button(13, ledRedFunction), Button(19, ledGreenFunction))
 
-thread1 = Thread(target=ledRedFunction())
-thread2 = Thread(target=ledGreenFunction())
 
 try:
     while True:

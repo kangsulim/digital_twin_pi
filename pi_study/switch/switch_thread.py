@@ -49,7 +49,7 @@ leds = (Led(16, "RED"), Led(21, "YELLOW"))
 def ledRedFunction():
     def threadRun():
         leds[0].blink(10, 0.5)
-    thread = Thread(target=threadRun(), daemon=True)
+    thread = Thread(target=threadRun, daemon=True)
     thread.start()
 
 greenLedState = False

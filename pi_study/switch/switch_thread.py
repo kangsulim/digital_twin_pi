@@ -67,8 +67,11 @@ buttons = (Button(13, ledRedFunction), Button(19, ledGreenFunction))
 
 try:
     while True:
-        if buttons[0] == gpio.HIGH and buttons[1] == gpio.HIGH:
-            buttons[2] = gpio.HIGH
+        if gpio.input(buttons[0].pin) == gpio.HIGH and gpio.input(buttons[1].pin) == gpio.HIGH:
+            leds[2].ledOn()
+        else:
+            leds[2].ledOff()
+
         for button in buttons:
             button.waitPressed()
 except KeyboardInterrupt:

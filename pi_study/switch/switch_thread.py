@@ -44,7 +44,7 @@ class Button:
     def checkPressed(self, currentState):
         return currentState == gpio.HIGH and self.prevState == gpio.LOW
 
-leds = (Led(16, "RED"), Led(21, "YELLOW"))
+leds = (Led(16, "RED"), Led(21, "GREEN"), Led(20, "Yellow"))
 
 def ledRedFunction():
     def threadRun():
@@ -67,6 +67,8 @@ buttons = (Button(13, ledRedFunction), Button(19, ledGreenFunction))
 
 try:
     while True:
+        if buttons[0] == gpio.HIGH and buttons[1] == gpio.HIGH:
+            buttons[2] = gpio.HIGH
         for button in buttons:
             button.waitPressed()
 except KeyboardInterrupt:

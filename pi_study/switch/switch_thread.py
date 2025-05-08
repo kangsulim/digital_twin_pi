@@ -1,5 +1,6 @@
 import RPi.GPIO as gpio
 from time import sleep
+from threading import Thread
 
 gpio.setmode(gpio.BCM)
 
@@ -60,7 +61,11 @@ def ledGreenFunction():
 
 buttons = (Button(13, ledRedFunction), Button(19, ledGreenFunction))
 
+thread1 = Thread(target=ledRedFunction())
+thread2 = Thread(target=ledGreenFunction())
 
+thread1.start()
+thread2.start()
 
 try:
     while True:

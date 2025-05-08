@@ -64,9 +64,6 @@ buttons = (Button(13, ledRedFunction), Button(19, ledGreenFunction))
 thread1 = Thread(target=ledRedFunction())
 thread2 = Thread(target=ledGreenFunction())
 
-thread1.start()
-thread2.start()
-
 try:
     while True:
         for button in buttons:

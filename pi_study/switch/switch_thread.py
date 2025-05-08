@@ -69,6 +69,7 @@ try:
     while True:
         if gpio.input(buttons[0].pin) == gpio.HIGH and gpio.input(buttons[1].pin) == gpio.HIGH:
             leds[2].ledOn()
+            sleep(0.5)
         else:
             leds[2].ledOff()
 

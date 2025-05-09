@@ -50,14 +50,18 @@ def button3():
         inputPassword.append(3)
 
 def checkPassword():
-    global inputPassword
+    global inputPassword, password
     while len(inputPassword) < 3:
         button1()
         button2()
         button3()
-        print("checkPassword 실행중")
+        print(inputPassword)
         sleep(0.5)
-    
+
+    # if inputPassword == password:
+    #     rightPassword()
+    # else:
+    #     wrongPassword()
 
 def wrongPassword():
     for _ in range(3):

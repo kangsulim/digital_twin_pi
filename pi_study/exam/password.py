@@ -79,11 +79,6 @@ try:
     while True:
         checkPassword()
 
-        if inputPassword == password:
-            rightPassword()
-        else:
-            wrongPassword()
-
 except KeyboardInterrupt:
     pass
 finally:

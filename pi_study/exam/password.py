@@ -62,7 +62,7 @@ def wrongPassword():
             gpio.output(led.pin, gpio.HIGH)
         sleep(0.5)
         for led in leds:
-            gpio.output(led,pin, gpio.LOW)
+            gpio.output(led.pin, gpio.LOW)
         sleep(0.5)
 
 def rightPassword():

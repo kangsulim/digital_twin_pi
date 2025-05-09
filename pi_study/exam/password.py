@@ -85,7 +85,8 @@ buttons = (Button(13, button1), Button(19, button2), Button(26, button3))
 try:
     while True:
         checkPassword()
-    print("프로그램 종료")
+        print("프로그램을 종료하세요")
+        sleep(1)
 except KeyboardInterrupt:
     pass
 finally:

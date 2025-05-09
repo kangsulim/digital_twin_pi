@@ -37,7 +37,7 @@ inputValue2 = gpio.HIGH
 inputValue3 = gpio.HIGH
 
 def button1():
-    global inputPassword, inputValue
+    global inputPassword, inputValue1
     if inputValue1 == gpio.input(buttons[0].pin):
         inputPassword.append(1)
         inputValue1 = gpio.LOW
@@ -45,7 +45,7 @@ def button1():
         inputValue1 = gpio.HIGH
 
 def button2():
-    global inputPasswordm, inputValue
+    global inputPasswordm, inputValue2
     if inputValue2 == gpio.input(buttons[1].pin):
         inputPassword.append(2)
         inputValue2 = gpio.LOW
@@ -53,7 +53,7 @@ def button2():
         inputValue2 = gpio.HIGH
 
 def button3():
-    global inputPassword, inputValue
+    global inputPassword, inputValue3
     if inputValue3 == gpio.input(buttons[2].pin):
         inputPassword.append(3)
         inputValue3 = gpio.LOW

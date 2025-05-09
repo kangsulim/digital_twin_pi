@@ -58,10 +58,10 @@ def checkPassword():
         print(inputPassword)
         sleep(0.5)
 
-    # if inputPassword == password:
-    #     rightPassword()
-    # else:
-    #     wrongPassword()
+    if inputPassword == password:
+        rightPassword()
+    else:
+        wrongPassword()
 
 def wrongPassword():
     for _ in range(3):

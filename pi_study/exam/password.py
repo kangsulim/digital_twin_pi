@@ -59,18 +59,18 @@ def checkPassword():
 def wrongPassword():
     for _ in range(3):
         for led in leds:
-            gpio.output(led, gpio.HIGH)
+            gpio.output(led.pin, gpio.HIGH)
         sleep(0.5)
         for led in leds:
-            gpio.output(led, gpio.LOW)
+            gpio.output(led,pin, gpio.LOW)
         sleep(0.5)
 
 def rightPassword():
     for _ in range(3):
         for led in leds:
-            gpio.output(led, gpio.HIGH)
+            gpio.output(led.pin, gpio.HIGH)
             sleep(0.1)
-            gpio.output(led, gpio.LOW)
+            gpio.output(led.pin, gpio.LOW)
             sleep(0.1)
 
 buttons = (Button(13, button1), Button(19, button2), Button(26, button3))

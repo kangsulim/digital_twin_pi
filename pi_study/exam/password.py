@@ -56,7 +56,7 @@ def checkPassword():
         button2()
         button3()
         print(inputPassword)
-        sleep(0.5)
+        sleep(0.1)
 
     if inputPassword == password:
         rightPassword()

@@ -55,6 +55,9 @@ def checkPassword():
         button1()
         button2()
         button3()
+        print("checkPassword 실행중")
+        sleep(0.5)
+    
 
 def wrongPassword():
     for _ in range(3):

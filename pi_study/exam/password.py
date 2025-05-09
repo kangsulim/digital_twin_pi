@@ -41,7 +41,7 @@ def button1():
     if inputValue1 == gpio.input(buttons[0].pin):
         inputPassword.append(1)
         inputValue1 = gpio.LOW
-    elif inputValue1 == gpio.LOW:
+    elif gpio.input(buttons[0].pin) == gpio.LOW:
         inputValue1 = gpio.HIGH
 
 def button2():
@@ -49,7 +49,7 @@ def button2():
     if inputValue2 == gpio.input(buttons[1].pin):
         inputPassword.append(2)
         inputValue2 = gpio.LOW
-    elif inputValue2 == gpio.LOW:
+    elif gpio.input(buttons[1].pin) == gpio.LOW:
         inputValue2 = gpio.HIGH
 
 def button3():
@@ -57,7 +57,7 @@ def button3():
     if inputValue3 == gpio.input(buttons[2].pin):
         inputPassword.append(3)
         inputValue3 = gpio.LOW
-    elif inputValue3 == gpio.LOW:
+    elif gpio.input(buttons[2].pin) == gpio.LOW:
         inputValue3 = gpio.HIGH
 
 def checkPassword():
